@@ -1,6 +1,12 @@
 
+@use './styles/abstracts/header';  
+@use './styles/abstracts/footer';  
+@use './styles/abstracts/mixins';  
+@use './styles/base/base';
+@use './styles/base/resets';    
 
-/*  
+/*
+  
 body {
   font-family: Arial, sans-serif;
   margin: 0;
