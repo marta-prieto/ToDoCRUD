@@ -33,6 +33,7 @@ const Header = () => {
           </div>
           <div className='menu__container-list'>
             <ul className="menu" ref={menuRef}>
+              {/*refactorizar con enlaces <a>*/}
               <li className='item__menu' onClick={() => hadleScroll(0)}>Mis datos</li>
               <li className='item__menu' onClick={() => hadleScroll(1)}>Mis tareas</li>
               <li className='item__menu' onClick={() => hadleScroll(2)}>Mis devoluciones</li>
