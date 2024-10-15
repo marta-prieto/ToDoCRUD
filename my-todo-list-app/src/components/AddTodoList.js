@@ -37,6 +37,7 @@ const TodoList = () => {
                         ))}
                 
                 </ul>
+                <button type="submit">Guardar</button>
             </section>
         );
     

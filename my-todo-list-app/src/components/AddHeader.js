@@ -1,9 +1,9 @@
-import menu from './images/menu-img.svg';
-import search from './images/search-img.svg';
-import logo from './images/logo-img.svg';
-import login from './images/login-img.svg';
-import cart from './images/cart-img.svg';
-
+import menu from '../images/menu-img.svg';
+import search from '../images/search-img.svg';
+import logo from '../images/logo-img.svg';
+import login from '../images/login-img.svg';
+import cart from '../images/cart-img.svg';
+import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 
 
@@ -34,16 +34,17 @@ const Header = () => {
           <div className='menu__container-list'>
             <ul className="menu" ref={menuRef}>
               {/*refactorizar con enlaces <a>*/}
-              <li className='item__menu' onClick={() => hadleScroll(0)}>Mis datos</li>
-              <li className='item__menu' onClick={() => hadleScroll(1)}>Mis tareas</li>
-              <li className='item__menu' onClick={() => hadleScroll(2)}>Mis devoluciones</li>
-              <li className='item__menu' onClick={() => hadleScroll(3)}>Mis comunicaciones</li>
-              <li className='item__menu' onClick={() => hadleScroll(4)}>Mis mejores amigos</li>
+              <li className='item__menu' onClick={() => hadleScroll(0)}><Link to="/form">Mis datos</Link></li>
+              <li className='item__menu' onClick={() => hadleScroll(1)}><Link to="/list">Mis tareas</Link></li>
+              <li className='item__menu' onClick={() => hadleScroll(2)}><Link to="/refund">Mis devoluciones</Link></li>
+              <li className='item__menu' onClick={() => hadleScroll(3)}><Link to="/comunication">Mis comunicaciones</Link></li>
+              <li className='item__menu' onClick={() => hadleScroll(4)}><Link to="/friend">Mis mejores amigos</Link></li>     
             </ul>
           </div>
         </nav>
       </header>
     );
+    
 };
 
 

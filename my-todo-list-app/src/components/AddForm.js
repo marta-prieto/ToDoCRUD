@@ -1,3 +1,5 @@
+
+
 const Form = () => {
     return (
     <section>
@@ -13,6 +15,7 @@ const Form = () => {
             <input type="tel" id="tel" name="tel" required pattern="[0-9]{9}" title="Debe ingresar 9 dígitos"/>
 
             <button type="submit">Guardar</button>
+            {/* añadir localstorage */}
         </form>
     </section>  
 );
