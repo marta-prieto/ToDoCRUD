@@ -1,3 +1,4 @@
+
 nav {
     .navbar__header-logo{
         height: auto;
@@ -100,36 +101,3 @@ header{
     margin: auto;
     flex-direction: column;
 }
-
-
-/*
-.menu__container-list {
-  padding: 20px;
-}
-
-.menu {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0;
-  list-style: none;
-}
-
-.item__menu {
-  padding: 10px 15px;
-  margin: 5px 0;
-  cursor: pointer;
-  transition: border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent; /* Sin borde por defecto */
-/*}
-
-.item__menu.active {
-  border-bottom: 2px solid red; /* Borde rojo cuando está activo */
-/*}
-
-.section {
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin: 20px 0;
-  border-radius: 5px;
-}*/

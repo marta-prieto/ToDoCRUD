@@ -1,9 +1,7 @@
-
 const Comunication = () => {
-  console.log('comunication')
   return (
     <section className="section">   
-    <p>Comunicaciones</p>
+    <p>Mis comunicaciones</p>
     </section>
   )
 };
