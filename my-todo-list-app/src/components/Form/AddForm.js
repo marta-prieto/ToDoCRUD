@@ -1,8 +1,25 @@
 const Form = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const formData = {
+          name: e.target.name.value,
+          email: e.target.email.value,
+          tel: e.target.tel.value,
+        };
+    
+        // localStorage
+        localStorage.setItem('formData', JSON.stringify(formData));
+    
+        e.target.reset();
+      };
+
+      
+
     return (
         <section className="section">   
         <p>Mis datos</p>
-        <form action="#" method="POST">
+        <form onSubmit={handleSubmit} method="POST">
             <label htmlFor="name">Nombre</label>
             <input type="text" id="name" name="name" required placeholder="Nombre"/>
 
@@ -13,7 +30,6 @@ const Form = () => {
             <input type="tel" id="tel" name="tel" required pattern="[0-9]{9}" title="Debe ingresar 9 dígitos" placeholder="Teléfono"/>
 
             <button type="submit">Guardar</button>
-            {/* añadir localstorage */}
         </form>
     </section>  
 );
