@@ -1,5 +1,10 @@
 const Friend = () => {
-    return <p>Mis mejores amigos</p>;
+    console.log('amigos')
+    return (
+    <section className="section">   
+    <p>Mis mejores amigos</p>;
+    </section>
+    )
   };
   
   export default Friend;

@@ -9,7 +9,7 @@ import { useRef } from 'react';
 
 const Header = () => {
     const menuRef = useRef(null);
-    const hadleScroll = (index) => {
+    const handleScroll = (index) => {
     const menuItems = menuRef.current.children;
     menuItems[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
   };
@@ -34,11 +34,11 @@ const Header = () => {
           <div className='menu__container-list'>
             <ul className="menu" ref={menuRef}>
               {/*refactorizar con enlaces <a>*/}
-              <li className='item__menu' onClick={() => hadleScroll(0)}><Link to="/form">Mis datos</Link></li>
-              <li className='item__menu' onClick={() => hadleScroll(1)}><Link to="/list">Mis tareas</Link></li>
-              <li className='item__menu' onClick={() => hadleScroll(2)}><Link to="/refund">Mis devoluciones</Link></li>
-              <li className='item__menu' onClick={() => hadleScroll(3)}><Link to="/comunication">Mis comunicaciones</Link></li>
-              <li className='item__menu' onClick={() => hadleScroll(4)}><Link to="/friend">Mis mejores amigos</Link></li>     
+              <Link to="/form"><li className='item__menu' onClick={() => handleScroll(0)}>Mis datos</li></Link>
+              <Link to="/list"><li className='item__menu' onClick={() => handleScroll(1)}>Mis tareas</li></Link>
+              <Link to="/refund"><li className='item__menu' onClick={() => handleScroll(2)}>Mis devoluciones</li></Link>
+              <Link to="/comunication"><li className='item__menu' onClick={() => handleScroll(3)}>Mis comunicaciones</li></Link>
+              <Link to="/friend"><li className='item__menu' onClick={() => handleScroll(4)}>Mis mejores amigos</li></Link>
             </ul>
           </div>
         </nav>

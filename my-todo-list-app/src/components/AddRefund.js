@@ -1,7 +1,11 @@
 
 const Refund = () => {
     console.log('refund')
-  return <p>Devoluciones</p>;
+  return  (
+  <section className="section">   
+  <p>Devoluciones</p>
+  </section>
+  )
 };
 
 export default Refund;

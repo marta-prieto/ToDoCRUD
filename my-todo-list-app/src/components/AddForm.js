@@ -2,7 +2,7 @@
 
 const Form = () => {
     return (
-    <section>
+        <section className="section">   
         <p>Mis datos</p>
         <form action="#" method="POST">
             <label htmlFor="name">Nombre</label>
@@ -20,6 +20,6 @@ const Form = () => {
     </section>  
 );
 };
-
+ console.log('Form',Form)
 
 export default Form;
