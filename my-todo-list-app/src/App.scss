@@ -1,0 +1,10 @@
+@use './styles/abstracts/variables';  
+@use './styles/abstracts/mixins';  
+@use './styles/base/base';
+@use './styles/base/resets';    
+@use './styles/abstracts/main';    
+@use './components/Header/header';
+@use './components/Footer/footer';
+@use './components/Tasks/task';
+@use './components/Tasks/Modal.scss';
+@use './components/Form/form'

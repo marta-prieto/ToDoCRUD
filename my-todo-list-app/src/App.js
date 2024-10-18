@@ -1,41 +1,36 @@
-//import logo from './logo.svg';
-import './App.css';
+
+
+import React from 'react';
+import './App.scss';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/AddHeader';
+import Form from './components/Form/AddForm';
+import TodoList from './components/Tasks/AddTodoList';
+import Refund from './components/GetRefund/AddRefund';
+import Comunication from './components/Comunication/AddComunication';
+import Friend from './components/FriendList/AddFriend';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header>
-    <nav aria-label="Menú principal">
-      <div className="logo">
-        <a href="https://www.tiendanimal.es/" aria-label="Ir al inicio">
-        <img src="https://www.tiendanimal.es/on/demandware.static/Sites-TiendanimalES-Site/-/default/dw330b2f7b/images/logo/tiendanimal-mobile.svg" className="navbar-header_logo" alt="logo" />
-        </a>
+
+    <Router>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Form />} />
+            <Route path="/list" element={<TodoList />} />
+            <Route path="/refund" element={<Refund />} />
+            <Route path="/comunication" element={<Comunication />} />
+            <Route path="/friend" element={<Friend />} />
+          </Routes>
+        </main>
+        <footer>
+        </footer>
       </div>
-     
-    
-    </nav>
-    <ul className="menu">
-        <li><a href="#datos">Mis datos</a></li>
-        <li><a href="#tareas">Mis tareas</a></li>
-        <li><a href="#devoluciones">Mis devoluciones</a></li>
-        <li><a href="#comunicaciones">Mis comunicaciones</a></li>
-        <li><a href="#amigos">Mis mejores amigos</a></li>
-      </ul>
-  </header>
-
-  <main>
-
-  </main>
-
-  <footer>
- 
-  </footer>
-
-
-
-  
-    
-    </div>
+    </Router>
   );
 }
 
