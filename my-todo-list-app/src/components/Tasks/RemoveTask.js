@@ -5,7 +5,7 @@ const Task = ({ task, deleteTask }) => {
   return (
     <li>
       {task.title}
-      <button className="button__icon-bin" onClick={() => deleteTask(task.id)}><img src={bin} alt="icono papelera"/></button>
+      <button className="button__icon-bin" onClick={() => deleteTask(task.id)}><img src={bin} alt="icono papelera" /></button>
     </li>
   );
 };

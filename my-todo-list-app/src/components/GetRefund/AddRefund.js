@@ -1,9 +1,8 @@
-
 const Refund = () => {
-  return  (
-  <section className="section">   
-  <p>Mis devoluciones</p>
-  </section>
+  return (
+    <section className="section">
+      <p>Mis devoluciones</p>
+    </section>
   )
 };
 

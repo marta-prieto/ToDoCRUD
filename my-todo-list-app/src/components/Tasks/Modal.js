@@ -1,25 +1,21 @@
 import { React } from "react";
 import './Modal.scss';
+import closeIcon from './images/closeIcon.svg';
 
-const Modal = ({ closeModal, Children }) => {
+const Modal = ({ closeModal, children }) => {
     return (
-        <section className="modal-overlay">
-            <div className="modal-content">
+        <section className="modal__overlay">
+            <div className="modal__content">
                 <div className="header__modal">
                     <p>Añadir tarea</p>
-                    <button className="close-modal-x" onClick={closeModal}>X</button>
-                    {Children}
+                    <button className="close__modal-x" onClick={closeModal}>
+                        <img src={closeIcon} alt="icono cerrar" />
+                    </button>
                 </div>
-                <form action="#" method="POST">
-                    <label htmlFor="name">Nombre</label>
-                    <input type="text" id="name" name="name" required placeholder="Nombre"/>
-
-                    <label >Descripción</label>
-                    <input type="text" id="text" name="text" required placeholder="descripción"/>
-                    <button className="modal__button-cancel" type="submit">Cancelar</button>
-                    <button className="modal__button-add" type="submit">Guardar</button>
-                    {/* añadir localstorage */}
-                </form>
+                {children}
+                <button className="modal__button-cancel" onClick={closeModal}>
+                    Cancelar
+                </button>
             </div>
         </section>
     );

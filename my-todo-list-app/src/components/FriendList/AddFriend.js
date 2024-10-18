@@ -1,10 +1,9 @@
 const Friend = () => {
-    return (
-    <section className="section">   
-    <p>Mis mejores amigos</p>;
+  return (
+    <section className="section">
+      <p>Mis mejores amigos</p>
     </section>
-    )
-  };
-  
-  export default Friend;
-  
+  )
+};
+
+export default Friend;

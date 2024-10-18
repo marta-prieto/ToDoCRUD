@@ -1,4 +1,4 @@
-import Task from './Task';
+import Task from './RemoveTask';
 import AddTask from './AddTask';
 import Modal from './Modal';
 import { useEffect, useState } from 'react';
@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 const TodoList = () => {
         const [tasks, setTasks] = useState([]); // Estado para las tareas
         const [showModal, setShowModal] = useState(false); // Estado para controlar el modal
+        const [loading, setLoading] = useState(true);
 
         // Función para obtener las tareas desde la API (solo las incompletas)
         useEffect(() => {
@@ -17,6 +18,8 @@ const TodoList = () => {
                                 setTasks(incompleteTasks.slice(0, 3)); // Solo muestra las primeras 3 tareas incompletas
                         } catch (error) {
                                 console.error('Error al mostrar las tareas:', error);
+                        } finally {
+                                setLoading(false); // Cambia el estado de carga al final
                         }
                 };
 
@@ -35,29 +38,32 @@ const TodoList = () => {
         };
 
         return (
-                <div className='task__container-list'>
+                <div className='section'>
                         <p>Mis Tareas</p>
 
                         {/* Renderizado tareas */}
-                        <ul className='task__list'>
-                                {tasks.length === 0 ? (
-                                        <p>No hay tareas incompletas.</p>
-                                ) : (
-                                        tasks.map(task => (
-                                                <Task key={task.id} task={task} deleteTask={deleteTask} />
-                                        ))
-                                )}
-                        </ul>
-
+                        {loading ? (
+                                <p>Cargando tareas...</p>
+                        ) : (
+                                <ul className='task__list'>
+                                        {tasks.length === 0 ? (
+                                                <p>No hay tareas incompletas.</p>
+                                        ) : (
+                                                tasks.map(task => (
+                                                        <Task key={task.id} task={task} deleteTask={deleteTask} />
+                                                ))
+                                        )}
+                                </ul>
+                        )}
                         {/* Botón modal */}
-                        <button className="button__add-task"onClick={() => setShowModal(true)}>Añadir Tarea</button>
+                        <button className="button__add-task" onClick={() => setShowModal(true)}>Añadir Tarea</button>
 
                         {/* Modal para añadir tarea */}
                         {showModal && (
                                 <Modal closeModal={() => setShowModal(false)}>
                                         <AddTask addTask={addTask} />
                                 </Modal>
-                        )}                 
+                        )}
                 </div>
         );
 };
