@@ -38,19 +38,20 @@ const TodoList = () => {
         };
 
         return (
-                <div className='section'>
+                <div className="section section__task-container">
                         <p>Mis Tareas</p>
 
                         {/* Renderizado tareas */}
                         {loading ? (
                                 <p>Cargando tareas...</p>
                         ) : (
-                                <ul className='task__list'>
+                                <ul className="task__list">
                                         {tasks.length === 0 ? (
                                                 <p>No hay tareas incompletas.</p>
                                         ) : (
                                                 tasks.map(task => (
                                                         <Task key={task.id} task={task} deleteTask={deleteTask} />
+
                                                 ))
                                         )}
                                 </ul>

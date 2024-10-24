@@ -17,22 +17,25 @@ body {
 
 main {
   margin-bottom: 60px;
+  
 }
 
 main .section {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px auto;
+  padding: 20px;
 }
 
 .section p {
   margin: auto 0;
   color: #555555;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
 }
 
 button {
+  font-weight: 600;
   width: 100%;
   max-width: 347px;
   padding: 10px;
@@ -46,4 +49,12 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+@media (min-width: 768px){
+main {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
 }
